@@ -27,12 +27,13 @@ def data_cmp(src, tgt, ind): #ind is the PKEY and should be common for both Data
         return x[0] if x[0] == x[1] else "{} ---> {}".format(x)
     
     #Applying the report_diff function
-    df_changed = df_all_changes.groupby(level=0, axis=1).apply(lambda frame: frame.apply(report_diff, axis = 1)
-    diff_df = df_changed[df_changed.apply(lambda x: x.str.contains("--->") == True, axis = 1]
+    df_changed = df_all_changes.groupby(level=0, axis=1).apply(lambda frame: frame.apply(report_diff, axis = 1))
+    diff_df = df_changed[df_changed.apply(lambda x: x.str.contains("--->") == True, axis = 1)]
     
     diff_df2 = diff_df[~diff_df.isna().all(axis = 1)]   
                                           
     diff_df_col_lst = [c for c in diff_df2 if diff_df2[c].astype(str).contains("--->").any()]
+    diff_df2 = diff_df2[diff_df_col_lst]                                      
                                           
     diff_df2.to_excel("Data_Mismatch.xlsx")
     diff_df_col_lst.to_excel("Mismatch_Column_list.xlsx")                                      
