@@ -1,0 +1,18 @@
+Employee name = Michael Schofield
+Email = michael.schofield@abc.com
+Basic component = 40000.0
+The Revised salary = 140000.0
+The salary_sum of Employee class = 140000.0
+------
+Employee name = John Wick
+Email = john.wick@abc.com
+Basic component = 120000.0
+The Revised salary = 375000.0
+The salary_sum of Employee class = 515000.0
+------
+Employee name = John Wick
+Email = john.wick@abc.com
+Basic component = 180000.0
+The Revised salary = 630000.0
+The salary_sum of Employee class = 1145000.0
+------
